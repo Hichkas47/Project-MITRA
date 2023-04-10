@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm22jte8dnuc1"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_agdg0"]
+[ext_resource type="Texture2D" uid="uid://dt0a2kuds2fyh" path="res://FZz68EgUcAAcIQH.jpg" id="1_j15v1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1egvp"]
+size = Vector2(764, 777)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v48qs"]
+size = Vector2(659, 665)
+
+[node name="enemy" type="StaticBody2D"]
+script = ExtResource("1_agdg0")
+
+[node name="area" type="Area2D" parent="."]
+position = Vector2(64.5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
+z_index = 1
+position = Vector2(-66.5, 2.5)
+shape = SubResource("RectangleShape2D_1egvp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5, 6)
+scale = Vector2(0.698973, 0.698973)
+texture = ExtResource("1_j15v1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11.5, 7.5)
+shape = SubResource("RectangleShape2D_v48qs")
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]
+[connection signal="body_shape_entered" from="area" to="." method="_on_area_body_shape_entered"]
