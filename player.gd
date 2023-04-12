@@ -1,38 +1,32 @@
 extends CharacterBody2D
 
-var speedx = 0
-var speedy = 0
+@export var speed = 400
+var pnom = 0
+@onready var dur = $Timer.time_left
+func get_input():
+	var input_direction = Input.get_vector("left", "right", "up", "down")
+	velocity = input_direction * speed	
 
-@onready var animplay = $AnimationPlayer 
-
-func _process(delta):
-	
-	if Input.is_action_pressed("attack"):
-		animplay.play("fist")
-	
-	if Input.is_action_pressed("right"):
-		speedx = min(700, speedx + 100)
-	if Input.is_action_pressed("left"):
-		speedx = max(-700, speedx - 100)
-	if Input.is_action_just_released("right") or Input.is_action_just_released("left"):
-		speedx = 0
+func punching():
+	if Input.is_action_just_pressed("attack"):
+		$Timer.start()
 		
-	if Input.is_action_pressed("up"):
-		speedy = min(700, speedy - 100)
-	if Input.is_action_pressed("down"):
-		speedy = max(-700, speedy + 100)
-	if Input.is_action_just_released("up") or Input.is_action_just_released("down"):
-		speedy = 0 
-	
-	var diffx = speedx * delta
-	var diffy = speedy * delta
+		if dur > 0 :
+			if $Timer2.time_left < 0.1: 
+				$Timer2.start()
+				print("punched")
+				print(pnom)
+				$AnimationPlayer.play("fist")
+				pnom = pnom + 1
+			
+	if $Timer.time_left < 0.1:
+		pnom = 0
+	if pnom > 4:
+		pnom = 0
 
-	if speedx > 0:
-		position.x = min(position.x + diffx, 1920)
-	elif speedx < 0:
-		position.x = max(position.x + diffx, 0)
-	
-	if speedy < 0:
-		position.y = min(position.y + diffy, 1080)
-	elif speedy > 0:
-		position.y = max(position.y + diffy, 0)
+func _physics_process(delta):
+	var dur = $Timer.time_left
+
+	get_input()
+	move_and_slide()
+	punching()
