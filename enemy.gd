@@ -1,11 +1,12 @@
-extends StaticBody2D
+extends CharacterBody2D
 
-@export var hp = 4
+@export var active = 1
+@export var hp = 7
 
 func _on_area_body_entered(body):
 	if body.is_in_group("player"):
 		hp = hp - 1
-		print("ookh")
+		$AnimationPlayer.play("ookh")
 	
 func _process(delta):
 	if hp < 1 :
