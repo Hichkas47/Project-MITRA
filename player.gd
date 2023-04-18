@@ -42,7 +42,7 @@ func punching():
 		anim.play("fist4")
 		
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var dur = $Timer.time_left
 
 	get_input()
