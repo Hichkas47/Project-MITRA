@@ -4,7 +4,9 @@ extends CharacterBody2D
 @export var speed = 400
 @onready var anim = $AnimationPlayer
 @onready var dur = $Timer.time_left
+
 var pnom = 0
+
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed	
@@ -12,14 +14,13 @@ func get_input():
 func punching():
 	if Input.is_action_just_pressed("attack"):
 		$Timer.start()
-		
 		if dur > 0 :
 			if $Timer2.time_left < 0.1: 
 				$Timer2.start()
 				print("punched")
 				print(pnom)
 				$AnimationPlayer.play("fist")
-				pnom = pnom + 1
+				pnom += 1
 			
 #	if $Timer.time_left < 0.1:
 #		pnom = 0

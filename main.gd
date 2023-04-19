@@ -1,20 +1,28 @@
 extends Node2D
 
-var enemy_scene = load("res://enemy.tscn")
-var enemy_inst
+@export var speed = 150
+
+var dir
+var dist
+var c = 10
+var move = 1
 
 func _process(delta):
 	if Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
+	dir = ($player.position - $enemy.position).normalized()
+	dist = $player.position.distance_to($enemy.position)
+	if dist > 100 and move:
+		$enemy.position += dir * speed * delta
+	else:
+		move = 0
+		$enemy.position.x += 5
+		c -= 1
+		if not c:
+			move = 1
+			c = 5
 
-func spawn_enemy():
-	enemy_inst = enemy_scene.instantiate()
-	add_child(enemy_inst)
-	enemy_inst.position = Vector2(1152, (randi() % 9) * 70)
-	enemy_inst.scale = Vector2(0.25, 0.25)
-
-func _on_enemy_spawn_timer_timeout():
-	await get_tree().create_timer(randi() % 2).timeout
-	spawn_enemy()
-
+func near_anim():
+	
+	near_anim()
 
