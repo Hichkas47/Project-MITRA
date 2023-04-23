@@ -10,6 +10,10 @@ var pnom = 0
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed	
+	if velocity.x < 0:
+		$sprite.flip_h = true
+	elif velocity.x > 0:
+		$sprite.flip_h = false
 
 func punching():
 	if Input.is_action_just_pressed("attack"):
