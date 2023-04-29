@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://bm22jte8dnuc1"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_agdg0"]
+[ext_resource type="Texture2D" uid="uid://dt0a2kuds2fyh" path="res://FZz68EgUcAAcIQH.jpg" id="1_j15v1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1egvp"]
+size = Vector2(308, 133)
+
+[sub_resource type="Animation" id="Animation_ddkb1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-33, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qftw8"]
+resource_name = "ookh"
+length = 0.3906
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0051069, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-33, 6), Vector2(21, 6), Vector2(-33, 6), Vector2(21, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:active")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.375),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_etkm1"]
+_data = {
+"RESET": SubResource("Animation_ddkb1"),
+"ookh": SubResource("Animation_qftw8")
+}
+
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_agdg0")
+active = 0
+
+[node name="area" type="Area2D" parent="."]
+position = Vector2(64.5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area"]
+z_index = 1
+position = Vector2(-66.5, 324.5)
+shape = SubResource("RectangleShape2D_1egvp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-33, 6)
+scale = Vector2(0.283105, 0.698973)
+texture = ExtResource("1_j15v1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_etkm1")
+}
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

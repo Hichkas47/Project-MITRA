@@ -1,0 +1,199 @@
+[gd_scene load_steps=17 format=3 uid="uid://b2wt2mtmy7hxa"]
+
+[ext_resource type="Script" path="res://pickachu.gd" id="1_l2tj0"]
+[ext_resource type="Texture2D" uid="uid://bdp2nh4lr6qsc" path="res://moz.png" id="1_twqak"]
+[ext_resource type="PackedScene" uid="uid://pw58te4162gs" path="res://player(1).tscn" id="2_8i18t"]
+[ext_resource type="PackedScene" uid="uid://bfn1fs1mdlafv" path="res://thunder.tscn" id="4_vr65s"]
+
+[sub_resource type="Animation" id="Animation_igha0"]
+resource_name = "t1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 0.01), Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.01)]
+}
+
+[sub_resource type="Animation" id="Animation_keco6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0.01)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ssng7"]
+_data = {
+"RESET": SubResource("Animation_keco6"),
+"t1": SubResource("Animation_igha0")
+}
+
+[sub_resource type="Animation" id="Animation_ylahe"]
+resource_name = "t2"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 0.01), Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.01)]
+}
+
+[sub_resource type="Animation" id="Animation_0hlxo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0.01)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2wqoi"]
+_data = {
+"RESET": SubResource("Animation_0hlxo"),
+"t2": SubResource("Animation_ylahe")
+}
+
+[sub_resource type="Animation" id="Animation_h5s1o"]
+resource_name = "t3"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 0.01), Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.01)]
+}
+
+[sub_resource type="Animation" id="Animation_rdk5k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0.01)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ot7n6"]
+_data = {
+"RESET": SubResource("Animation_rdk5k"),
+"t3": SubResource("Animation_h5s1o")
+}
+
+[sub_resource type="Animation" id="Animation_x80fu"]
+resource_name = "t4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 0.01), Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.01)]
+}
+
+[sub_resource type="Animation" id="Animation_tkxf1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0.01)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_73tu8"]
+_data = {
+"RESET": SubResource("Animation_tkxf1"),
+"t4": SubResource("Animation_x80fu")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_l2tj0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(548, 375)
+scale = Vector2(0.381122, 0.381122)
+texture = ExtResource("1_twqak")
+
+[node name="player" parent="." instance=ExtResource("2_8i18t")]
+position = Vector2(75, 458)
+
+[node name="thunders" type="Node" parent="."]
+
+[node name="Area2D" parent="thunders" instance=ExtResource("4_vr65s")]
+
+[node name="t1" type="AnimationPlayer" parent="thunders/Area2D"]
+libraries = {
+"": SubResource("AnimationLibrary_ssng7")
+}
+
+[node name="Area2D2" parent="thunders" instance=ExtResource("4_vr65s")]
+position = Vector2(1078, 0)
+
+[node name="t2" type="AnimationPlayer" parent="thunders/Area2D2"]
+libraries = {
+"": SubResource("AnimationLibrary_2wqoi")
+}
+
+[node name="Area2D3" parent="thunders" instance=ExtResource("4_vr65s")]
+position = Vector2(860, 0)
+
+[node name="t3" type="AnimationPlayer" parent="thunders/Area2D3"]
+libraries = {
+"": SubResource("AnimationLibrary_ot7n6")
+}
+
+[node name="Area2D4" parent="thunders" instance=ExtResource("4_vr65s")]
+position = Vector2(240, 0)
+
+[node name="t4" type="AnimationPlayer" parent="thunders/Area2D4"]
+libraries = {
+"": SubResource("AnimationLibrary_73tu8")
+}
+
+[connection signal="body_entered" from="thunders/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="thunders/Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="thunders/Area2D3" to="." method="_on_area_2d_3_body_entered"]
+[connection signal="body_entered" from="thunders/Area2D4" to="." method="_on_area_2d_4_body_entered"]
