@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvkmratu0a36t"
-path="res://.godot/imported/retropolicegif.png-8eb5752e1f4fadd59856fc6f1eb0442a.ctex"
+uid="uid://dr8il2baqd30n"
+path="res://.godot/imported/goomba1.png-a8abc3a34c7b657451ebeaf3a83ab707.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://retropolicegif.png"
-dest_files=["res://.godot/imported/retropolicegif.png-8eb5752e1f4fadd59856fc6f1eb0442a.ctex"]
+source_file="res://assets/goomba1.png"
+dest_files=["res://.godot/imported/goomba1.png-a8abc3a34c7b657451ebeaf3a83ab707.ctex"]
 
 [params]
 

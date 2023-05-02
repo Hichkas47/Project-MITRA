@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgl3g1q82xmf5"]
+[gd_scene load_steps=26 format=3 uid="uid://csus1hkwygj66"]
 
 [ext_resource type="Script" path="res://sonic.gd" id="1_kjget"]
-[ext_resource type="Texture2D" uid="uid://clef6hnb355wp" path="res://Untitled-1.png" id="1_t14sk"]
-[ext_resource type="PackedScene" uid="uid://pw58te4162gs" path="res://player.tscn" id="3_tvnxn"]
+[ext_resource type="Texture2D" uid="uid://cscroxwtbfev2" path="res://assets/sonic-Sheet.png" id="2_8b0a8"]
+[ext_resource type="PackedScene" uid="uid://dbgb62vfq5o1s" path="res://player.tscn" id="3_tvnxn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ld2"]
 size = Vector2(1184, 77.0001)
@@ -18,6 +18,199 @@ radius = 64.8992
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j6rh4"]
 radius = 67.8652
+
+[sub_resource type="Animation" id="Animation_v0iar"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RigidBody2D/Image021:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RigidBody2D:freeze")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_orvqe"]
+resource_name = "boost"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RigidBody2D/Image021:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.145593, 0.3, 0.455474),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RigidBody2D:freeze")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1.10957),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_h8btf"]
+resource_name = "dizzy"
+length = 0.8983
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RigidBody2D/Image021:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.367356),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RigidBody2D:freeze")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_wild6"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RigidBody2D/Image021:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RigidBody2D:freeze")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_evit6"]
+resource_name = "spin"
+length = 0.2894
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RigidBody2D/Image021:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.155154),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RigidBody2D:freeze")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nkbhy"]
+_data = {
+"RESET": SubResource("Animation_v0iar"),
+"boost": SubResource("Animation_orvqe"),
+"dizzy": SubResource("Animation_h8btf"),
+"idle": SubResource("Animation_wild6"),
+"spin": SubResource("Animation_evit6")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4e4k3"]
+animation = &"boost"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1bw0e"]
+animation = &"dizzy"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_whej4"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nd2hy"]
+animation = &"spin"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2yr3f"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sqxc4"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ftcy5"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_11qul"]
+advance_mode = 0
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_me2kx"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_y3qjx"]
+states/Start/position = Vector2(232, 199)
+states/boost/node = SubResource("AnimationNodeAnimation_4e4k3")
+states/boost/position = Vector2(372, 83)
+states/dizzy/node = SubResource("AnimationNodeAnimation_1bw0e")
+states/dizzy/position = Vector2(540, 199)
+states/idle/node = SubResource("AnimationNodeAnimation_whej4")
+states/idle/position = Vector2(372, 199)
+states/spin/node = SubResource("AnimationNodeAnimation_nd2hy")
+states/spin/position = Vector2(540, 83)
+transitions = ["idle", "boost", SubResource("AnimationNodeStateMachineTransition_2yr3f"), "boost", "spin", SubResource("AnimationNodeStateMachineTransition_sqxc4"), "spin", "dizzy", SubResource("AnimationNodeStateMachineTransition_ftcy5"), "dizzy", "idle", SubResource("AnimationNodeStateMachineTransition_11qul"), "Start", "spin", SubResource("AnimationNodeStateMachineTransition_me2kx")]
+graph_offset = Vector2(20, 1)
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_ep3c2"]
 
 [node name="sonic" type="Node2D"]
 script = ExtResource("1_kjget")
@@ -46,10 +239,11 @@ shape = SubResource("RectangleShape2D_x0ld2")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 z_index = -4
-position = Vector2(318, 305)
+position = Vector2(339, 363)
 scale = Vector2(0.677975, 0.677975)
 collision_layer = 256
 collision_mask = 256
+mass = 0.01
 physics_material_override = SubResource("PhysicsMaterial_3r3f4")
 gravity_scale = 0.0
 custom_integrator = true
@@ -61,23 +255,36 @@ angular_damp_mode = 1
 
 [node name="Image021" type="Sprite2D" parent="RigidBody2D"]
 material = SubResource("CanvasItemMaterial_rwmvg")
-position = Vector2(-1.1062, 1.76755)
-scale = Vector2(0.8686, 0.854812)
-texture = ExtResource("1_t14sk")
+position = Vector2(1.47506, 3.8147e-05)
+scale = Vector2(0.562882, 0.553946)
+texture = ExtResource("2_8b0a8")
+offset = Vector2(31.4449, -218.34)
+hframes = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(1.84375, 3.24254)
+position = Vector2(0.334961, 1.80406)
 shape = SubResource("CircleShape2D_ichdf")
 
 [node name="Area2D" type="Area2D" parent="RigidBody2D"]
-position = Vector2(0.368805, 0.292603)
+position = Vector2(-1.13998, -1.14589)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D"]
 position = Vector2(-6.10352e-05, 0)
 shape = SubResource("CircleShape2D_j6rh4")
 
 [node name="player" parent="." instance=ExtResource("3_tvnxn")]
-position = Vector2(111, 129)
-scale = Vector2(0.632, 0.632)
+position = Vector2(119, 322)
+scale = Vector2(1.21365, 1.21365)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nkbhy")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_y3qjx")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_ep3c2")
 
 [connection signal="body_entered" from="RigidBody2D/Area2D" to="." method="_on_area_2d_body_entered"]

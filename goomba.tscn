@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dafymsk50q711"]
+[gd_scene load_steps=9 format=3 uid="uid://cjqc4u7efbd4f"]
 
 [ext_resource type="Script" path="res://goomba.gd" id="1_hx3h3"]
-[ext_resource type="Texture2D" uid="uid://1qd4evvly3nf" path="res://goomba0.png" id="1_ticpd"]
-[ext_resource type="Texture2D" uid="uid://dr8il2baqd30n" path="res://goomba1.png" id="2_tji2c"]
+[ext_resource type="Texture2D" uid="uid://1qd4evvly3nf" path="res://assets/goomba0.png" id="2_b1cxn"]
+[ext_resource type="Texture2D" uid="uid://dr8il2baqd30n" path="res://assets/goomba1.png" id="3_xnbld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xq15o"]
 
@@ -10,10 +10,10 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ticpd")
+"texture": ExtResource("2_b1cxn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_tji2c")
+"texture": ExtResource("3_xnbld")
 }],
 "loop": true,
 "name": &"default",

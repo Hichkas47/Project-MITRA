@@ -1,19 +1,19 @@
-[gd_scene load_steps=50 format=3 uid="uid://dp5tudtsf6kyg"]
+[gd_scene load_steps=50 format=3 uid="uid://bi4nfd6hu6qgu"]
 
-[ext_resource type="Texture2D" uid="uid://d12ihtu787ddm" path="res://monsterioSS.png" id="1_31p2h"]
 [ext_resource type="Script" path="res://mario.gd" id="1_lvh1d"]
+[ext_resource type="Texture2D" uid="uid://d12ihtu787ddm" path="res://assets/monsterioSS.png" id="2_lwxsf"]
 [ext_resource type="Script" path="res://fireball.gd" id="3_j7t0r"]
-[ext_resource type="Texture2D" uid="uid://dylo20gsxo35d" path="res://fire-Sheet.png" id="4_nx6hy"]
-[ext_resource type="PackedScene" uid="uid://pw58te4162gs" path="res://player.tscn" id="5_jq2un"]
+[ext_resource type="Texture2D" uid="uid://dylo20gsxo35d" path="res://assets/fire-Sheet.png" id="4_p4b5y"]
+[ext_resource type="PackedScene" uid="uid://dbgb62vfq5o1s" path="res://player.tscn" id="5_jq2un"]
 [ext_resource type="VideoStream" path="res://salop.ogv" id="6_vjjmx"]
 [ext_resource type="Script" path="res://VideoStreamPlayer.gd" id="7_8yjtl"]
-[ext_resource type="Texture2D" uid="uid://d056moe0x5i54" path="res://SharedScreenshot.jpg" id="8_1nsjk"]
+[ext_resource type="Texture2D" uid="uid://d056moe0x5i54" path="res://assets/SharedScreenshot.jpg" id="8_umf30"]
 [ext_resource type="Shader" path="res://monsterio.gdshader" id="9_by0lf"]
-[ext_resource type="Texture2D" uid="uid://bf5tlu0ggd0au" path="res://Image021.png" id="9_rc34v"]
-[ext_resource type="Texture2D" uid="uid://1vo57s7jc7wa" path="res://Image023.png" id="11_6qrip"]
-[ext_resource type="Texture2D" uid="uid://hamj43vg60w3" path="res://hsr4tuyhw46.png" id="11_jh3rx"]
-[ext_resource type="AudioStream" uid="uid://8smu3lyr0cw" path="res://mamma-mia-By-tuna.voicemod.net.mp3" id="12_p8h1r"]
-[ext_resource type="PackedScene" uid="uid://dafymsk50q711" path="res://goomba.tscn" id="14_bt6fa"]
+[ext_resource type="Texture2D" uid="uid://bf5tlu0ggd0au" path="res://assets/Image021.png" id="10_gctnt"]
+[ext_resource type="Texture2D" uid="uid://hamj43vg60w3" path="res://assets/hsr4tuyhw46.png" id="11_5ypib"]
+[ext_resource type="AudioStream" uid="uid://8smu3lyr0cw" path="res://assets/mamma-mia-By-tuna.voicemod.net.mp3" id="12_o2j47"]
+[ext_resource type="Texture2D" uid="uid://1vo57s7jc7wa" path="res://assets/Image023.png" id="13_b1c21"]
+[ext_resource type="PackedScene" uid="uid://cjqc4u7efbd4f" path="res://goomba.tscn" id="14_bt6fa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kvsq7"]
 size = Vector2(25.3002, 45.8608)
@@ -632,7 +632,7 @@ position = Vector2(-11.2027, 9)
 z_index = -2
 position = Vector2(806, 300)
 scale = Vector2(0.44427, 0.44427)
-texture = ExtResource("1_31p2h")
+texture = ExtResource("2_lwxsf")
 hframes = 6
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -672,7 +672,7 @@ shape = SubResource("RectangleShape2D_8pxhn")
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/fire"]
 rotation = 0.717798
 scale = Vector2(0.451326, 0.451326)
-texture = ExtResource("4_nx6hy")
+texture = ExtResource("4_p4b5y")
 flip_h = true
 hframes = 4
 
@@ -764,7 +764,7 @@ z_index = -7
 offset_top = -202.0
 offset_right = 1160.0
 offset_bottom = 958.0
-texture = ExtResource("8_1nsjk")
+texture = ExtResource("8_umf30")
 
 [node name="Camera2D" type="Camera2D" parent="Node"]
 position = Vector2(577, 322)
@@ -790,20 +790,20 @@ polygon = PackedVector2Array(-300, -300.8, -295.2, -296, -286.9, -296, -276, -29
 
 [node name="Image021" type="Sprite2D" parent="RigidBody2D"]
 material = SubResource("ShaderMaterial_cyulg")
-position = Vector2(-1199.16, -536.893)
+position = Vector2(-972.012, -122.423)
 scale = Vector2(0.811502, 0.811502)
-texture = ExtResource("9_rc34v")
+texture = ExtResource("10_gctnt")
 
 [node name="sakuraichan" type="Sprite2D" parent="."]
 position = Vector2(-357, 537)
 scale = Vector2(0.716956, 0.716956)
-texture = ExtResource("11_jh3rx")
+texture = ExtResource("11_5ypib")
 flip_h = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="sakuraichan"]
 position = Vector2(-523.045, -559.309)
 scale = Vector2(1.39479, 1.39479)
-stream = ExtResource("12_p8h1r")
+stream = ExtResource("12_o2j47")
 volume_db = 24.0
 autoplay = true
 attenuation = 2.07053
@@ -831,17 +831,17 @@ scale = Vector2(0.617158, 0.617158)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
 material = SubResource("ShaderMaterial_wgjso")
-texture = ExtResource("11_6qrip")
+texture = ExtResource("13_b1c21")
 
 [node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D4"]
 material = SubResource("ShaderMaterial_wgjso")
 position = Vector2(-1110.94, -21.0594)
-texture = ExtResource("11_6qrip")
+texture = ExtResource("13_b1c21")
 
 [node name="Sprite2D3" type="Sprite2D" parent="StaticBody2D4"]
 material = SubResource("ShaderMaterial_wgjso")
 position = Vector2(-589.189, -11.3397)
-texture = ExtResource("11_6qrip")
+texture = ExtResource("13_b1c21")
 
 [node name="pipes" type="AnimationPlayer" parent="StaticBody2D4"]
 libraries = {

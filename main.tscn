@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://ii6ujhku2lih"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_s3jv2"]
-[ext_resource type="PackedScene" uid="uid://bm22jte8dnuc1" path="res://enemy.tscn" id="2_w6tmp"]
-[ext_resource type="PackedScene" uid="uid://pw58te4162gs" path="res://player.tscn" id="3_1blrr"]
+[ext_resource type="PackedScene" uid="uid://cmffv6u07d5om" path="res://enemy.tscn" id="2_w6tmp"]
+[ext_resource type="PackedScene" uid="uid://dbgb62vfq5o1s" path="res://player.tscn" id="3_1blrr"]
 
 [node name="main" type="Node2D"]
 y_sort_enabled = true
@@ -13,6 +13,7 @@ position = Vector2(567, 341)
 
 [node name="enemy" parent="." instance=ExtResource("2_w6tmp")]
 position = Vector2(839, 173)
+hp = 30
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 wait_time = 5.0

@@ -1,24 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2wt2mtmy7hxa"]
+[gd_scene load_steps=17 format=3 uid="uid://cfv60yv227xo4"]
 
 [ext_resource type="Script" path="res://pickachu.gd" id="1_l2tj0"]
-[ext_resource type="Texture2D" uid="uid://bdp2nh4lr6qsc" path="res://moz.png" id="1_twqak"]
-[ext_resource type="PackedScene" uid="uid://pw58te4162gs" path="res://player(1).tscn" id="2_8i18t"]
+[ext_resource type="PackedScene" uid="uid://dbgb62vfq5o1s" path="res://player.tscn" id="2_8i18t"]
+[ext_resource type="Texture2D" uid="uid://c4uk02xj6n4ps" path="res://assets/moz.png" id="2_8ygtt"]
 [ext_resource type="PackedScene" uid="uid://bfn1fs1mdlafv" path="res://thunder.tscn" id="4_vr65s"]
-
-[sub_resource type="Animation" id="Animation_igha0"]
-resource_name = "t1"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.7, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1, 0.01), Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.01)]
-}
 
 [sub_resource type="Animation" id="Animation_keco6"]
 length = 0.001
@@ -35,14 +20,8 @@ tracks/0/keys = {
 "values": [Vector2(1, 0.01)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ssng7"]
-_data = {
-"RESET": SubResource("Animation_keco6"),
-"t1": SubResource("Animation_igha0")
-}
-
-[sub_resource type="Animation" id="Animation_ylahe"]
-resource_name = "t2"
+[sub_resource type="Animation" id="Animation_igha0"]
+resource_name = "t1"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -54,6 +33,12 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 0.01), Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.01)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ssng7"]
+_data = {
+"RESET": SubResource("Animation_keco6"),
+"t1": SubResource("Animation_igha0")
 }
 
 [sub_resource type="Animation" id="Animation_0hlxo"]
@@ -71,14 +56,8 @@ tracks/0/keys = {
 "values": [Vector2(1, 0.01)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2wqoi"]
-_data = {
-"RESET": SubResource("Animation_0hlxo"),
-"t2": SubResource("Animation_ylahe")
-}
-
-[sub_resource type="Animation" id="Animation_h5s1o"]
-resource_name = "t3"
+[sub_resource type="Animation" id="Animation_ylahe"]
+resource_name = "t2"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -90,6 +69,12 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 0.01), Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.01)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2wqoi"]
+_data = {
+"RESET": SubResource("Animation_0hlxo"),
+"t2": SubResource("Animation_ylahe")
 }
 
 [sub_resource type="Animation" id="Animation_rdk5k"]
@@ -107,14 +92,8 @@ tracks/0/keys = {
 "values": [Vector2(1, 0.01)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ot7n6"]
-_data = {
-"RESET": SubResource("Animation_rdk5k"),
-"t3": SubResource("Animation_h5s1o")
-}
-
-[sub_resource type="Animation" id="Animation_x80fu"]
-resource_name = "t4"
+[sub_resource type="Animation" id="Animation_h5s1o"]
+resource_name = "t3"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -126,6 +105,12 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 0.01), Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.01)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ot7n6"]
+_data = {
+"RESET": SubResource("Animation_rdk5k"),
+"t3": SubResource("Animation_h5s1o")
 }
 
 [sub_resource type="Animation" id="Animation_tkxf1"]
@@ -143,6 +128,21 @@ tracks/0/keys = {
 "values": [Vector2(1, 0.01)]
 }
 
+[sub_resource type="Animation" id="Animation_x80fu"]
+resource_name = "t4"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 0.01), Vector2(1, 1), Vector2(1, 1), Vector2(1, 0.01)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_73tu8"]
 _data = {
 "RESET": SubResource("Animation_tkxf1"),
@@ -155,7 +155,7 @@ script = ExtResource("1_l2tj0")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(548, 375)
 scale = Vector2(0.381122, 0.381122)
-texture = ExtResource("1_twqak")
+texture = ExtResource("2_8ygtt")
 
 [node name="player" parent="." instance=ExtResource("2_8i18t")]
 position = Vector2(75, 458)

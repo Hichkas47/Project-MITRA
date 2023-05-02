@@ -1,7 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://c3xltkfxguon8"]
+[gd_scene load_steps=18 format=3]
 
 [ext_resource type="Script" path="res://player.gd" id="1_gs3rk"]
-[ext_resource type="Texture2D" uid="uid://b802k10x7pqne" path="res://smplepunch.png" id="2_xatwc"]
+[ext_resource type="Texture2D" uid="uid://15etd1nearhc" path="res://assets/smplepunch.png" id="2_xatwc"]
 [ext_resource type="Texture2D" uid="uid://denfc0iorrg6t" path="res://icon.svg" id="3_3ielv"]
 
 [sub_resource type="Animation" id="Animation_6ap67"]

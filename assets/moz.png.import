@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dylo20gsxo35d"
-path="res://.godot/imported/fire-Sheet.png-6dbe44fb72360b23215a7da72138e2b1.ctex"
+uid="uid://c4uk02xj6n4ps"
+path="res://.godot/imported/moz.png-59404796daae5a18251b3eaf611454dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fire-Sheet.png"
-dest_files=["res://.godot/imported/fire-Sheet.png-6dbe44fb72360b23215a7da72138e2b1.ctex"]
+source_file="res://assets/moz.png"
+dest_files=["res://.godot/imported/moz.png-59404796daae5a18251b3eaf611454dc.ctex"]
 
 [params]
 

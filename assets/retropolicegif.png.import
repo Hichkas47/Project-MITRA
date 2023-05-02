@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdp2nh4lr6qsc"
-path="res://.godot/imported/moz.png-1fe866ec3e4ea1b57e9e457cafdf51c6.ctex"
+uid="uid://cvkmratu0a36t"
+path="res://.godot/imported/retropolicegif.png-07328cfe8769fc5e1c3a563ad72d2526.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://moz.png"
-dest_files=["res://.godot/imported/moz.png-1fe866ec3e4ea1b57e9e457cafdf51c6.ctex"]
+source_file="res://assets/retropolicegif.png"
+dest_files=["res://.godot/imported/retropolicegif.png-07328cfe8769fc5e1c3a563ad72d2526.ctex"]
 
 [params]
 

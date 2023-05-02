@@ -26,6 +26,7 @@ func _process(delta):
 		
 	dir = (player.position - position).normalized()
 	dist = player.position.distance_to(position)
+	var diff = dir * speed * delta * rev_dir
 	if srand:
 		idle()
 		frame = randi() % 60 + 1
@@ -40,7 +41,7 @@ func _process(delta):
 	if chase:
 		if dist > 145:
 			walk()
-		var diff = dir * speed * delta * rev_dir
+		print(diff)
 		if dist > 100 and move:
 			position += diff
 		else:

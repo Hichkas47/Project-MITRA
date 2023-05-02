@@ -1,7 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://bm22jte8dnuc1"]
+[gd_scene load_steps=30 format=3 uid="uid://cmffv6u07d5om"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_agdg0"]
-[ext_resource type="Texture2D" uid="uid://cvkmratu0a36t" path="res://retropolicegif.png" id="2_jyj5m"]
+[ext_resource type="Texture2D" uid="uid://cvkmratu0a36t" path="res://assets/retropolicegif.png" id="2_fis5d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xcgn"]
 size = Vector2(20, 16.9193)
@@ -296,7 +296,7 @@ active = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-33, 6)
-texture = ExtResource("2_jyj5m")
+texture = ExtResource("2_fis5d")
 hframes = 8
 
 [node name="area1" type="Area2D" parent="."]

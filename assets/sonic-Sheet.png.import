@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt0a2kuds2fyh"
-path="res://.godot/imported/FZz68EgUcAAcIQH.jpg-23bd0faab8bbd2eb0c8631086a66dd3b.ctex"
+uid="uid://cscroxwtbfev2"
+path="res://.godot/imported/sonic-Sheet.png-5bd568c43d4fd1f6e9ffc80f37f4795a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FZz68EgUcAAcIQH.jpg"
-dest_files=["res://.godot/imported/FZz68EgUcAAcIQH.jpg-23bd0faab8bbd2eb0c8631086a66dd3b.ctex"]
+source_file="res://assets/sonic-Sheet.png"
+dest_files=["res://.godot/imported/sonic-Sheet.png-5bd568c43d4fd1f6e9ffc80f37f4795a.ctex"]
 
 [params]
 

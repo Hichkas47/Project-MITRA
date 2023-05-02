@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d12ihtu787ddm"
-path="res://.godot/imported/monsterioSS.png-699f0f28108ad36f60381f5f90ef7252.ctex"
+uid="uid://bf5tlu0ggd0au"
+path="res://.godot/imported/Image021.png-06b0e5f062409c23cc8e43c05747bfcd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://monsterioSS.png"
-dest_files=["res://.godot/imported/monsterioSS.png-699f0f28108ad36f60381f5f90ef7252.ctex"]
+source_file="res://assets/Image021.png"
+dest_files=["res://.godot/imported/Image021.png-06b0e5f062409c23cc8e43c05747bfcd.ctex"]
 
 [params]
 
