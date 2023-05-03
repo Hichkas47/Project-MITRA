@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://5bn76ox08h4n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ubcbp"]
+line_spacing = 5.0
+font_size = 20
+
+[node name="credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="credit_holder" type="RigidBody2D" parent="."]
+mass = 0.01
+gravity_scale = 0.0
+
+[node name="credit_text" type="Label" parent="credit_holder"]
+offset_left = 335.0
+offset_top = 305.0
+offset_right = 836.0
+offset_bottom = 1262.0
+text = "Credits
+
+Designers
+
+Parsa Ebrahimi
+Aria Shamsipour
+
+*****
+
+Artist
+Mohammad Amin Saraei
+
+*****
+
+Lead Programmer
+Soroush Yadollahpour
+
+*****
+
+Supporting Programmers
+Aria Shamsipour
+Mohammad Amin Saraei
+
+*****
+
+Developed for BEBAZ Game Jam on Godot 4
+
+All rights reserved 
+Project MITHRA™ 2023- 
+"
+label_settings = SubResource("LabelSettings_ubcbp")
+horizontal_alignment = 1
